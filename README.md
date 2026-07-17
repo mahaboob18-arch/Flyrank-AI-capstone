@@ -27,3 +27,10 @@ This repository was created as part of the FlyRank AI Internship onboarding caps
 ## Author
 
 Mahaboob
+
+## Getting Started
+
+1. Clone the repository
+2. Open the project in VS Code
+3. Review the project documentation
+4. Follow the FlyRank internship tasks
