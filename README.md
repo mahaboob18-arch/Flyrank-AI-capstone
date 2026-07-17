@@ -30,7 +30,25 @@ Mahaboob
 
 ## Getting Started
 
-1. Clone the repository
-2. Open the project in VS Code
-3. Review the project documentation
-4. Follow the FlyRank internship tasks
+### Prerequisites
+
+- Git
+- VS Code or Cursor
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/mahaboob18-arch/Flyrank-AI-capstone.git
+```
+
+### Open the Project
+
+```bash
+cd Flyrank-AI-capstone
+code .
+```
+
+### Next Steps
+
+- Read `CLAUDE.md` for project guidelines
+- Follow the FlyRank onboarding tasks
