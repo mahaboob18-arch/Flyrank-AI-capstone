@@ -1,164 +1,139 @@
-\# FE-03 Workflow Documentation
+# FE-03 Workflow Documentation
 
-
-
-\## Feature Chosen
+## Feature Chosen
 
 Settings Form with Validation
 
-
-
-\## Round 1 – Vague Prompt
-
-
+## Round 1 – Vague Prompt
 
 Prompt Used:
 
-
-
 ```text
-
 Create a React TypeScript settings form with validation.
-
 ```
 
+### Outcome
 
+The AI generated a working settings form with basic validation and a functional user interface.
 
-Outcome:
+### Observations
 
-\- Generated a settings form
+- Validation logic was handled directly inside the component.
+- Form state and validation were tightly coupled.
+- Limited focus on accessibility.
+- No implementation plan was provided before coding.
+- No explicit verification process was included.
 
-\- Included basic validation
+Round 1 was quick to generate, but required more manual review to determine whether the implementation handled edge cases correctly.
 
-\- Form worked with basic validation
+---
 
-
-
-\## Round 2 – Structured Prompt
-
-
+## Round 2 – Structured Prompt
 
 Prompt Used:
 
-
-
 ```text
-
 You are helping me improve an existing React TypeScript settings form.
-
-
 
 Before writing code:
 
-
-
-1\. Analyze the current project structure.
-
-2\. Identify weaknesses in validation, accessibility, and maintainability.
-
-3\. Propose improvements.
-
-4\. Explain the implementation plan.
-
-5\. Then implement the improvements.
-
-
+1. Analyze the current project structure.
+2. Identify weaknesses in validation, accessibility, and maintainability.
+3. Propose improvements.
+4. Explain the implementation plan.
+5. Then implement the improvements.
 
 Requirements:
-
-\- Use react-hook-form
-
-\- Use Zod for validation
-
-\- Separate validation schema from UI
-
-\- Improve accessibility
-
-\- Show validation errors
-
-\- Keep TypeScript strict
-
+- Use react-hook-form
+- Use Zod for validation
+- Separate validation schema from UI
+- Improve accessibility
+- Show validation errors
+- Keep TypeScript strict
 ```
 
+### Outcome
 
+The AI produced a more structured implementation that included:
 
-Outcome:
+- react-hook-form for form state management
+- Zod schema validation
+- Validation logic separated from UI components
+- Improved accessibility support
+- Better error handling and user feedback
+- Verification steps after implementation
 
-\- Added react-hook-form
+---
 
-\- Added Zod validation
+## Specific Differences
 
-\- Extracted validation into a separate schema file
+### Round 1
 
-\- Improved accessibility
+- Validation logic was mixed directly with the component.
+- Form handling relied on manual state management.
+- Accessibility considerations were limited.
+- Minimal planning before implementation.
 
-\- Improved maintainability
+### Round 2
 
-\- Added better error handling
+- Validation was moved into a dedicated schema file.
+- react-hook-form was used for form management.
+- Zod was used for schema-based validation.
+- Accessibility improvements were added, including proper labels and validation feedback.
+- The implementation followed an analyze → plan → implement → verify workflow.
 
+These changes improved maintainability and made the code easier to review and extend.
 
+---
 
-\## Verification
+## AI Mistake Caught During Review
 
+One issue identified during review was that the initial AI-generated implementation kept validation logic inside the UI component. While functional, this made the code less maintainable and harder to scale.
 
+The implementation also lacked explicit accessibility improvements.
+
+During Round 2, these issues were addressed by separating validation into a dedicated schema and adding accessibility-focused improvements.
+
+---
+
+## Verification
 
 Commands Run:
 
-
-
 ```bash
-
 npm install
-
 npm run build
-
 npm run dev
-
 ```
 
+### Manual Tests Performed
 
+- Empty name field shows validation error
+- Empty email field shows validation error
+- Invalid email format shows validation error
+- Name shorter than 2 characters shows validation error
+- Valid form submission shows success message
 
-Manual Tests:
+The production build completed successfully without errors.
 
-\- Empty name shows validation error
+---
 
-\- Empty email shows validation error
+## Review Effort
 
-\- Invalid email shows validation error
+Round 2 required more effort upfront because the prompt included planning, constraints, and verification requirements.
 
-\- Name shorter than 2 characters shows validation error
+However, the review process was faster because validation rules, accessibility considerations, and testing expectations were defined before implementation began.
 
-\- Valid submission shows success message
+Although Round 2 took longer to generate, it reduced the amount of manual review and debugging required afterward.
 
+---
 
+## Conclusion
 
-\## Comparison
+This exercise demonstrated the difference between simply asking AI to generate code and guiding AI with a structured workflow.
 
+The vague prompt produced a working result quickly, but required more review and offered fewer guarantees around maintainability and accessibility.
 
+The structured workflow produced a more reliable implementation through planning, schema-based validation, accessibility improvements, and explicit verification steps.
 
-Round 1:
-
-\- Simple implementation
-
-\- Validation mixed with component logic
-
-
-
-Round 2:
-
-\- Better architecture
-
-\- Better validation
-
-\- Better accessibility
-
-\- Easier maintenance
-
-
-
-\## Conclusion
-
-
-
-The structured AI workflow produced cleaner code, stronger validation, improved accessibility, and a more maintainable solution.
-
+The additional prompt effort in Round 2 resulted in higher confidence in correctness and reduced review effort overall.
